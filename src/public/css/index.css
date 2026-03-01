@@ -1,0 +1,57 @@
+.todo__message {
+  max-width: 1230px;
+}
+
+.todo__message--success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  padding: 10px 40px;
+  font-size: 13px;
+  margin-bottom: 40px;
+}
+
+.todo__content {
+  margin: 0 auto;
+  max-width: 1230px;
+}
+
+.create-form {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.create-form__item-input {
+  width: 400px;
+  height: 30px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.create-form__button-submit {
+  background-color: black;
+  color: white;
+  width: 100px;
+  height: 30px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-bottom: 40px;
+}
+
+.todo-table {
+  margin: 0 auto;
+}
+
+.todo-table__header {
+  text-align: left;
+}
+
+.todo-table__row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.update-form__item-input {
+  outline: none;
+  border: none;
+}
