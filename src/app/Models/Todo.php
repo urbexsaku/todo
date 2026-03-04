@@ -9,6 +9,11 @@ class Todo extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'content'
+        'content',
+        'user_id',
     ];
+
+    public function user(){ //ユーザーは1人なのでuser単数
+        return $this->belongsTo(user::class);
+    }
 }

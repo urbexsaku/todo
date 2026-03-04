@@ -17,6 +17,7 @@ class CreateTodosTable extends Migration
             $table->id();
             $table->string('content', 20);
             $table->timestamps();
+            $table->foreignID('user_id')->constrained()->onDelete('cascade');
         });
     }
 

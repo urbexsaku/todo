@@ -5,17 +5,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Todo;
 use App\Http\Requests\TodoRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
     public function index(){
-        $todos = Todo::all();
+        $todos = Todo::where('user_id', Auth::id())->get(); //ユーザーidごとのデータ取得
         return view('index', compact('todos'));
     }
 
     public function store(TodoRequest $request){
         $todo = $request->only(['content']);
-        Todo::create($todo);
+        Todo::create([
+            'content' => $request->content,
+            'user_id' => auth()->id(), // Todo作成時にuser_idを保存
+        ]);
 
         return redirect('/')->with('message','Todoを作成しました');
     }
