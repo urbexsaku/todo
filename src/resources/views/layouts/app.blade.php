@@ -10,13 +10,13 @@
 </head>
 <body>
 
-<header class="header">
-  <div class="header__inner">
-    <div class="header-utilities">
-      <a class="header__logo" href="/">Todo</a>
+<header class="header"> <!-- ヘッダー背景色指定 -->
+  <div class="header__inner"> <!-- ヘッダー枠指定 -->
+    <div class="header-utilities"> <!-- ヘッダー内　ロゴとNavの配置指定 -->
+      <a class="header__logo" href="/">Todo</a> <!-- ヘッダーロゴ -->
       <nav>
-        <ul class="header-nav">
-          @if (Auth::check())
+        <ul class="header-nav"> <!-- ヘッダーナビ -->
+          @if (Auth::check()) <!-- ログインしてたらナビ表示 -->
           <li class="header-nav__item">
             <a class="header-nav__link" href="/mypage">マイページ</a>
           </li>

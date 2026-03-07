@@ -15,18 +15,18 @@ class TodoController extends Controller
     }
 
     public function store(TodoRequest $request){
-        $todo = $request->only(['content']);
+        $todo = $request->only(['content']); //不要？
         Todo::create([
             'content' => $request->content,
             'user_id' => auth()->id(), // Todo作成時にuser_idを保存
         ]);
 
-        return redirect('/')->with('message','Todoを作成しました');
+        return redirect('/')->with('message','Todoを作成しました'); //リダイレクト先->with('message',)でセッションに値（メッセージ）が保存される
     }
     
     public function update(TodoRequest $request){
         $todo = $request->only(['content']);
-        Todo::find($request->id)->update($todo);
+        Todo::find($request->id)->update($todo); //変更されたidを取得し、todoを更新する
 
         return redirect('/')->with('message','Todoを更新しました');
 

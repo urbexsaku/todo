@@ -5,21 +5,21 @@
 @endsection
 
 @section('content')
-<div class="login-form__content">
-  <div class="login-form__heading">
+<div class="login-form__content"> <!-- 全体枠を指定 -->
+  <div class="login-form__heading"> 
     <h2>ログイン</h2>
   </div>
-  <form class="form" action="/login" method="post">
+  <form class="form" action="/login" method="post"> <!-- ログインフォーム CSSでは枠と配置を指定 -->
     @csrf
-    <div class="form__group">
-      <div class="form__group-title">
+    <div class="form__group"> <!-- アイテムごとに余白 -->
+      <div class="form__group-title"> <!-- タイトルの配置 -->
         <span class="form__label--item">メールアドレス</span>
       </div>
       <div class="form__group-content">
-        <div class="form__input--text">
+        <div class="form__input--text"> <!-- 入力フォーム枠の設定 -->
           <input type="email" name="email" value="{{ old('email') }}">
         </div>
-        <div class="form__error">
+        <div class="form__error"> <!-- エラーの書式 -->
           @error('email')
           {{ $message }}
           @enderror

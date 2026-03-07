@@ -12,7 +12,7 @@
   padding: 10px 0;
 }
 
-.todo__message--error ul {
+.todo__message--error ul { /* デフォルトCSSにある余白を削除 */
   margin: 0;
 }
 
@@ -62,7 +62,7 @@
   width: 70%;
 }
 
-.todo-table_inner {
+.todo-table__inner {
   width: 100%;
 }
 
@@ -77,7 +77,7 @@
   font-weight: bold;
 }
 
-.todo-table__item:first-of-type {
+.todo-table__item:first-of-type { /* Todo+更新ボタンまでのエリアサイズを指定 */
   padding: 12px;
   width: 90%;
 }
